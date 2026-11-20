@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F97316">
+  <meta name="description" content="TruckSpot — find the best food trucks, stands, and market stalls around you in real time.">
+  <meta property="og:title" content="TruckSpot — Real-time food truck discovery">
+  <meta property="og:description" content="Find nearby food trucks with live hours, menus, and locations. Download the app.">
+  <meta property="og:type" content="website">
+  <title>TruckSpot — Real-Time Food Truck Discovery</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="TruckSpot home">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 10c-8.837 0-16 7.163-16 16 0 11 16 30 16 30s16-19 16-30c0-8.837-7.163-16-16-16z" fill="#F97316"/>
+          <g fill="#fff">
+            <rect x="24" y="21" width="11" height="10" rx="1.5"/>
+            <path d="M35 23h3.5L42 28v3h-7v-8z"/>
+            <circle cx="28" cy="31" r="1.8"/>
+            <circle cx="37.5" cy="31" r="1.8"/>
+          </g>
+        </svg>
+        <span class="brand__name">Truck<span class="brand__name-accent">Spot</span></span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="#map">Live Map</a>
+        <a href="#menu">Menus &amp; Hours</a>
+        <a href="#alerts">Get Alerts</a>
+        <a href="#alerts" class="btn btn--primary btn--sm">Get Early Access</a>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="dot"></span>Now testing in Marion, IL</p>
+          <h1 class="hero__title">
+            Chase down the best food trucks — <span class="text-accent">in real time.</span>
+          </h1>
+          <p class="hero__lede">
+            TruckSpot shows you nearby trucks, stands, and market stalls with live hours, menus, and locations. Never miss your favorite bite again.
+          </p>
+          <div class="hero__cta">
+            <a class="store-btn" href="#" aria-label="Download on the App Store">
+              <svg class="store-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.04c-.03-2.36 1.93-3.5 2.02-3.55-1.1-1.62-2.83-1.84-3.44-1.86-1.46-.15-2.86.86-3.6.86-.75 0-1.89-.84-3.11-.82-1.6.02-3.08.93-3.9 2.36-1.67 2.9-.43 7.18 1.2 9.53.8 1.15 1.74 2.44 2.98 2.4 1.2-.05 1.65-.78 3.1-.78 1.44 0 1.85.78 3.11.75 1.29-.02 2.1-1.16 2.88-2.31.9-1.32 1.27-2.6 1.29-2.67-.03-.01-2.48-.95-2.53-3.91zM14.75 5.15c.66-.8 1.11-1.9.99-3-.95.04-2.1.63-2.79 1.42-.61.7-1.14 1.83-1 2.9 1.06.08 2.14-.53 2.8-1.32z"/></svg>
+              <span class="store-btn__text"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <a class="store-btn" href="#" aria-label="Get it on Google Play">
+              <svg class="store-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L13 12.1v-.2L3.6 2.3z"/><path fill="#FBBC04" d="m16.5 15.7-3.5-3.6v-.2l3.5-3.6.1.1 4.1 2.3c1.2.7 1.2 1.8 0 2.5l-4.1 2.3-.1.2z"/><path fill="#EA4335" d="m16.6 15.6-3.6-3.6L3.6 21.7c.4.4 1 .4 1.8 0l11.2-6.1"/><path fill="#4285F4" d="M16.6 8.4 5.4 2.3c-.8-.4-1.4-.4-1.8 0L13 11.9l3.6-3.5z"/></svg>
+              <span class="store-btn__text"><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>2,400+</strong><span>trucks mapped</span></li>
+            <li><strong>Live</strong><span>hours &amp; status</span></li>
+            <li><strong>Free</strong><span>forever</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="app">
+                <div class="app__status"><span>9:41</span><span>5G ▮▮▮</span></div>
+                <div class="app__header">
+                  <svg class="app__mark" viewBox="0 0 64 64"><path d="M32 10c-8.837 0-16 7.163-16 16 0 11 16 30 16 30s16-19 16-30c0-8.837-7.163-16-16-16z" fill="#F97316"/><g fill="#fff"><rect x="24" y="21" width="11" height="10" rx="1.5"/><path d="M35 23h3.5L42 28v3h-7v-8z"/><circle cx="28" cy="31" r="1.8"/><circle cx="37.5" cy="31" r="1.8"/></g></svg>
+                  <span class="app__name">Truck<span>Spot</span></span>
+                </div>
+                <div class="app__toggle"><span>Map</span><span class="is-active">List</span></div>
+                <h3 class="app__h">Nearby Open Trucks</h3>
+                <div class="app__search"><span>🔍</span><span class="app__search-text">Search cuisine, truck name, or location…</span></div>
+                <div class="app__chips"><span class="app__chip is-active">Open Now</span><span class="app__chip">All</span><span class="app__chip">Tacos</span><span class="app__chip">Burgers</span><span class="app__chip">Pizza</span></div>
+                <div class="app__chips"><span class="app__chip is-active">Everything</span><span class="app__chip">Trucks</span><span class="app__chip">Stands</span><span class="app__chip">Market</span></div>
+                <div class="app__list">
+                  <div class="app__item"><span class="app__emoji">🌮</span><div><strong>El Fuego Tacos</strong><small>0.4 km · Open</small></div></div>
+                  <div class="app__item"><span class="app__emoji">🍔</span><div><strong>Smash &amp; Roll</strong><small>0.8 km · Open</small></div></div>
+                </div>
+                <nav class="app__tabs"><span class="is-active">Explore</span><span>Favorites</span><span>Alerts</span><span>Profile</span></nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAP ============ -->
+    <section class="section" id="map">
+      <div class="container">
+        <header class="section__head">
+          <h2>Find trucks near you — live</h2>
+          <p>Tap a marker or a card. Filter by craving or vendor type.</p>
+        </header>
+
+        <div class="chips" role="group" aria-label="Filter by craving">
+          <button class="chip is-active" data-filter="all"     aria-pressed="true">All</button>
+          <button class="chip" data-filter="open"    aria-pressed="false">Open Now</button>
+          <button class="chip" data-filter="tacos"   aria-pressed="false">Tacos</button>
+          <button class="chip" data-filter="burgers" aria-pressed="false">Burgers</button>
+          <button class="chip" data-filter="pizza"   aria-pressed="false">Pizza</button>
+        </div>
+
+        <div class="explorer">
+          <div class="explorer__map"><div id="truck-map" class="map" aria-label="Interactive map of nearby food trucks"></div></div>
+          <aside class="explorer__side" aria-label="Nearby trucks">
+            <div class="explorer__head">
+              <h3>Nearby</h3>
+              <span class="muted" id="result-count">6 trucks</span>
+            </div>
+            <ul class="truck-list" id="truck-list"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENUS & HOURS ============ -->
+    <section class="section section--alt" id="menu">
+      <div class="container">
+        <header class="section__head">
+          <h2>Browse menus &amp; hours</h2>
+          <p>Highlights, prices, and today's hours — no app required.</p>
+        </header>
+
+        <div class="chips" role="group" aria-label="Filter menu cards">
+          <button class="chip is-active" data-filter="all"     aria-pressed="true">All</button>
+          <button class="chip" data-filter="open"    aria-pressed="false">Open Now</button>
+          <button class="chip" data-filter="tacos"   aria-pressed="false">Tacos</button>
+          <button class="chip" data-filter="burgers" aria-pressed="false">Burgers</button>
+          <button class="chip" data-filter="pizza"   aria-pressed="false">Pizza</button>
+        </div>
+
+        <div class="truck-grid" id="truck-cards"></div>
+      </div>
+    </section>
+
+    <!-- ============ ALERTS ============ -->
+    <section class="section" id="alerts">
+      <div class="container">
+        <div class="alerts">
+          <div class="alerts__copy">
+            <p class="badge">Coming soon</p>
+            <h2>Never miss a truck near you.</h2>
+            <p>Get a ping the moment your favorites roll up. Pick email, browser push, or both — we only send what you ask for.</p>
+            <ul class="alerts__list">
+              <li>Live truck arrivals</li>
+              <li>Opening hours &amp; closures</li>
+              <li>Menu drops and specials</li>
+            </ul>
+          </div>
+
+          <form class="alerts__form card" id="alerts-form" novalidate>
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <fieldset class="alerts__prefs">
+              <legend>Notify me about</legend>
+              <label class="check"><input type="checkbox" name="channel" value="push"  checked><span>Browser push notifications</span></label>
+              <label class="check"><input type="checkbox" name="channel" value="email" checked><span>Email updates</span></label>
+            </fieldset>
+            <button class="btn btn--primary btn--block" type="submit">Notify me</button>
+            <p class="field-error" id="email-error" role="alert" hidden></p>
+            <p class="field-success" id="alerts-success" role="status" hidden>You're in. We'll ping you the moment a truck rolls up. 🚚</p>
+            <p class="field-hint muted">No spam. Unsubscribe any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 10c-8.837 0-16 7.163-16 16 0 11 16 30 16 30s16-19 16-30c0-8.837-7.163-16-16-16z" fill="#F97316"/>
+          <g fill="#fff"><rect x="24" y="21" width="11" height="10" rx="1.5"/><path d="M35 23h3.5L42 28v3h-7v-8z"/><circle cx="28" cy="31" r="1.8"/><circle cx="37.5" cy="31" r="1.8"/></g>
+        </svg>
+        <span>TruckSpot</span>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Support</a><a href="#">Press</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2025</span> TruckSpot. Made for hungry people.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

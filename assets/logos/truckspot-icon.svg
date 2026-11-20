@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="tiTitle">
+  <title id="tiTitle">TruckSpot app icon</title>
+  <rect width="512" height="512" rx="112" fill="#FFFFFF"/>
+  <!-- motion -->
+  <g fill="#F97316">
+    <rect x="52"  y="228" width="70" height="14" rx="7" opacity="0.45"/>
+    <rect x="42"  y="252" width="80" height="14" rx="7" opacity="0.85"/>
+    <rect x="52"  y="276" width="70" height="14" rx="7" opacity="0.45"/>
+  </g>
+  <!-- pin -->
+  <path d="M300 96c-52.467 0-95 42.533-95 95 0 63.333 95 189 95 189s95-125.667 95-189c0-52.467-42.533-95-95-95z" fill="#F97316"/>
+  <!-- truck -->
+  <g fill="#FFFFFF">
+    <rect x="253" y="172" width="58" height="54" rx="8"/>
+    <path d="M311 182h18.5l18.5 26.5V228h-37v-46z"/>
+    <circle cx="274" cy="228" r="11"/>
+    <circle cx="324" cy="228" r="11"/>
+  </g>
+</svg>

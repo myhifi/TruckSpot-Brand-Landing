@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TruckSpot — Contest Board</title>
+  <style>
+    :root { --o:#F97316; --t:#0D9488; --ink:#111827; --muted:#6B7280; --line:#E5E7EB; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background:#EEF1F5; color:var(--ink); }
+    .board { width: 1600px; margin: 32px auto; background:#fff; padding: 48px; border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,.08); }
+    .board__head { display:flex; justify-content:space-between; align-items:flex-end; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .board__eyebrow { font-size: 12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--o); }
+    h1 { font-family: Sora, Inter, sans-serif; font-size: 34px; margin: 8px 0 4px; letter-spacing:-.02em; }
+    .board__sub { color: var(--muted); }
+    .board__tags { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .tag { font-size: 11px; font-weight:700; padding:6px 10px; border-radius:999px; background:#F3F4F6; color:#374151; }
+    .tag--o { background:#FFEDD5; color:#C2410C; }
+    h2.sec { font-family:Sora,Inter,sans-serif; font-size: 18px; margin: 32px 0 14px; letter-spacing:-.01em; }
+    .row { display:grid; gap: 20px; }
+    .row--4 { grid-template-columns: repeat(4,1fr); }
+    .row--2 { grid-template-columns: 1fr 1fr; }
+    .row--3 { grid-template-columns: repeat(3,1fr); }
+    .cell { background:#F9FAFB; border:1px solid var(--line); border-radius: 16px; padding: 18px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
+    .cell svg { height: 90px; width: auto; }
+    .cell small { font-size: 11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+    .swatches { display:flex; gap:10px; flex-wrap:wrap; }
+    .sw { width:96px; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+    .sw__chip { height:56px; }
+    .sw__meta { padding:6px 8px; font-size:11px; font-weight:600; }
+    .sw__meta small { display:block; color:var(--muted); font-weight:500; }
+    .frame { overflow:hidden; border-radius:14px; border:1px solid var(--line); background:#fff; position:relative; }
+    .frame img { display:block; max-width:100%; }
+    .frame--desktop { height: auto; min-height: 200px; }
+    .frame--mobile { width: 220px; height: 460px; margin: 0 auto; overflow: hidden; }
+    .frame--mobile img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .foot { margin-top:32px; padding-top: 18px; border-top: 1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size: 12px; color: var(--muted); }
+    .foot strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="board__head">
+      <div>
+        <div class="board__eyebrow">Contest submission — TruckSpot</div>
+        <h1>Brand mark &amp; single-scroll landing page</h1>
+        <p class="board__sub">Evolved the client's existing orange map-pin + white-truck identity with motion lines, a clean wordmark, and a real production-ready landing page.</p>
+      </div>
+      <div class="board__tags">
+        <span class="tag tag--o">Branding</span>
+        <span class="tag">SVG logo</span>
+        <span class="tag">Live Leaflet map</span>
+        <span class="tag">Responsive</span>
+        <span class="tag">HTML/CSS/JS</span>
+      </div>
+    </div>
+
+    <h2 class="sec">1 · Logo &amp; app icon</h2>
+    <div class="row row--4">
+      <div class="cell">
+        <img src="assets/logos/truckspot-logo.svg" alt="TruckSpot logo color">
+        <small>Color</small>
+      </div>
+      <div class="cell">
+        <img src="assets/logos/truckspot-logo-mono-dark.svg" alt="TruckSpot mono dark">
+        <small>Mono / dark</small>
+      </div>
+      <div class="cell">
+        <img src="assets/logos/truckspot-logo-mono-light.svg" alt="TruckSpot mono light" style="background:#111827;padding:12px;border-radius:10px;">
+        <small>Mono / light</small>
+      </div>
+      <div class="cell">
+        <img src="assets/logos/truckspot-icon.svg" alt="TruckSpot app icon" style="height:110px;">
+        <small>App icon · 512</small>
+      </div>
+    </div>
+
+    <h2 class="sec">2 · Palette &amp; type</h2>
+    <div class="swatches">
+      <div class="sw"><div class="sw__chip" style="background:#F97316"></div><div class="sw__meta">#F97316<small>Primary orange</small></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#EA580C"></div><div class="sw__meta">#EA580C<small>Orange hover</small></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#0D9488"></div><div class="sw__meta">#0D9488<small>Teal accent</small></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#111827"></div><div class="sw__meta" style="color:#fff;background:#111827">#111827<small style="color:#9CA3AF">Charcoal ink</small></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#FFFFFF;border-bottom:1px solid #E5E7EB"></div><div class="sw__meta">#FFFFFF<small>Surface</small></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#F8FAFC"></div><div class="sw__meta">#F8FAFC<small>Soft gray</small></div></div>
+    </div>
+
+    <h2 class="sec">3 · Landing page — desktop</h2>
+    <div class="frame frame--desktop">
+      <!--
+        SCREENSHOT INSTRUCTIONS
+        Open http://localhost:3000 in Chrome → DevTools → toggle device toolbar
+        → set viewport to 1440 × 900 → Cmd/Ctrl+Shift+P → "Capture full size screenshot"
+        → save as assets/screens/landing-desktop@2x.png
+      -->
+      <img
+        src="assets/screens/landing-desktop@2x.png"
+        alt="TruckSpot landing page — desktop"
+        style="width:100%;display:block;"
+        onerror="this.style.cssText='width:100%;height:620px;display:flex;align-items:center;justify-content:center;background:#F9FAFB;color:#6B7280;font-size:13px;font-family:Inter,sans-serif;'; this.alt='Screenshot pending — see README'; this.removeAttribute(\'onerror\');"
+      >
+    </div>
+
+    <h2 class="sec">4 · Landing page — mobile</h2>
+    <!--
+      SCREENSHOT INSTRUCTIONS
+      In Chrome DevTools set device to iPhone 14 Pro (393 × 852).
+      Scroll to each section and use "Capture screenshot" (not full-size).
+      Save as:
+        assets/screens/landing-mobile-hero@2x.png   (hero section, top of page)
+        assets/screens/landing-mobile-map@2x.png    (map section scrolled into view)
+        assets/screens/landing-mobile-menu@2x.png   (menu cards section)
+    -->
+    <div class="row row--3">
+      <div class="frame frame--mobile">
+        <img src="assets/screens/landing-mobile-hero@2x.png" alt="TruckSpot mobile — hero" style="width:100%;display:block;">
+      </div>
+      <div class="frame frame--mobile">
+        <img src="assets/screens/landing-mobile-map@2x.png" alt="TruckSpot mobile — map" style="width:100%;display:block;">
+      </div>
+      <div class="frame frame--mobile">
+        <img src="assets/screens/landing-mobile-menu@2x.png" alt="TruckSpot mobile — menu" style="width:100%;display:block;">
+      </div>
+    </div>
+
+    <div class="foot">
+      <span><strong>Live demo:</strong> truckspot.example.com</span>
+      <span>© 2025 TruckSpot — contest entry</span>
+    </div>
+  </div>
+</body>
+</html>

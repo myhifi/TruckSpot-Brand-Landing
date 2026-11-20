@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TruckSpot favicon">
+  <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <path d="M32 10c-8.837 0-16 7.163-16 16 0 11 16 30 16 30s16-19 16-30c0-8.837-7.163-16-16-16z" fill="#F97316"/>
+  <g fill="#FFFFFF">
+    <rect x="24" y="21" width="11" height="10" rx="1.5"/>
+    <path d="M35 23h3.5L42 28v3h-7v-8z"/>
+    <circle cx="28"   cy="31" r="1.8"/>
+    <circle cx="37.5" cy="31" r="1.8"/>
+  </g>
+</svg>

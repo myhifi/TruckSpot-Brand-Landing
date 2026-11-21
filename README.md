@@ -2,6 +2,11 @@
 
 Contest entry for the TruckSpot branding + single-scroll landing page brief.
 
+## Live Demo & Design Handoff
+
+- **Live Demo (GitHub Pages):** https://myhifi.github.io/TruckSpot-Brand-Landing/
+- **Figma Design & Handoff:** https://www.figma.com/design/5ND8SKEEIJCK1xXBvRRdMk/TruckSpot-%E2%80%94-Brand---Landing-v1.0?node-id=1-3&t=WXAufrO8CBF06opB-1
+
 ## Run locally
 
 **You must serve over HTTP.** ES modules do not work from `file://`.
